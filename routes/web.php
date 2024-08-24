@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.home');
     Route::get('/clients', [ClientController::class, 'index'])->name('admin.client');
@@ -43,7 +44,7 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
     Route::any('/logout', [LoginController::class, 'logout'])->name('logout.admin');
 });
 Route::middleware(['auth'])->group(function () {
-    Route::get('/appointment', [AppointmentController::class, 'index']);
+    Route::get('/appointment/{id?}', [AppointmentController::class, 'create'])->name('appointment.create');
     Route::post('/appointment/store', [AppointmentController::class, 'store']);
     Route::any('/logout', [LoginController::class, 'logout'])->name('logout');
 });
@@ -51,6 +52,9 @@ Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
 Route::get('/services', [ServicesController::class, 'index'])->name('frontend.service');
 Route::get('/brands', [BrandsController::class, 'index'])->name('frontend.brands');
 Route::get('/featured_cars', [FeaturedCarsController::class, 'index'])->name('frontend.featured_cars');
+Route::get('/featured_cars_show/{id?}', [FeaturedCarsController::class, 'show'])->name('frontend.featured_cars.show');
 Route::get('/contact', [ContactController::class, 'index'])->name('frontend.contact');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.page');
 Route::post('/login-process', [LoginController::class, 'login'])->name('login');
+Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('register');
+Route::post('/register-process', [LoginController::class, 'register'])->name('register.post');

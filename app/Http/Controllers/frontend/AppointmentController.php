@@ -18,9 +18,9 @@ class AppointmentController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id)
     {
-        //
+         
     }
 
     /**
@@ -28,7 +28,7 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($id);
     }
 
     /**

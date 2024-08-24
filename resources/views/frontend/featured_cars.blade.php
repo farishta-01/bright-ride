@@ -19,20 +19,22 @@
                                     <div class="featured-cars-img">
                                         <img src="{{ asset('storage/' . $car['first_image']) }}" alt="Car Image">
                                     </div>
-                                    <div class="featured-model-info">
-                                        <p>
-                                            model: {{ $car['model'] }}
-                                            <span class="featured-mi-span">Milage: {{ $car['mileage'] }} <small>m/h</small>
-                                            </span>
+                                    <a href="{{ route('frontend.featured_cars.show', ['id' => $car['id']]) }}">
+                                        <div class="featured-model-info">
+                                            <p>
+                                                model: {{ $car['model'] }}
+                                                <span class="featured-mi-span">Milage: {{ $car['mileage'] }}
+                                                    <small>m/h</small>
+                                                </span>
 
-                                            {{ $car['transmission'] }}
-                                        </p>
-                                    </div>
+                                                {{ $car['transmission'] }}
+                                            </p>
+                                        </div>
                                 </div>
                                 <div class="featured-cars-txt">
                                     <h2><a href="#">{{ $car['brand_name'] }} {{ $car['title'] }}</a></h2>
                                     <h3>£ {{ number_format($car['price'], 2) }}</h3>
-
+                                    </a>
                                     <h6 class="text-info">
                                         {{ $car['description'] }}
                                     </h6>

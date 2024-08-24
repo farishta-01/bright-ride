@@ -44,6 +44,11 @@
                         <div class="card-header">
                             <h3 class="text-center font-weight-light my-4">Login</h3>
                         </div>
+                        @if (session('success'))
+                            <div class="alert alert-success text-center">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                         <div class="card-body">
                             <form id="loginForm" method="POST" action="{{ route('login') }}">
                                 @csrf
@@ -74,7 +79,7 @@
                             </form>
                         </div>
                         <div class="card-footer text-center py-3">
-                            <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                            <div class="small"><a href="{{ route('register') }}">Need an account? Sign up!</a></div>
                         </div>
                     </div>
                 </div>

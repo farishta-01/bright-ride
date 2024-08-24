@@ -61,8 +61,25 @@ class FeaturedCarsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // Find the car by ID or fail
+        $car = Car::with(['carImages', 'brand'])->findOrFail($id);
+        // dd($car);
+        $car_data = [
+            'id' => $car->id,
+            'brand_name' => $car->brand->name,
+            'title' => $car->title,
+            'description' => $car->description,
+            'price' => $car->price,
+            'model' => $car->model,
+            'mileage' => $car->mileage,
+            'transmission' => $car->transmission,
+            'images' => $car->carImages->pluck('image_path'), // Pass all images to the view
+        ];
+
+        // Return the view with the car data
+        return view('frontend.single-car', compact('car_data'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
