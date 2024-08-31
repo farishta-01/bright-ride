@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         // Extract credentials from the request
         $credentials = $request->only('username', 'password');
-
+        // dd($credentials);
         // Determine if the username is an email
         if (filter_var($credentials['username'], FILTER_VALIDATE_EMAIL)) {
             // If it's an email, update the credentials to use 'email'
@@ -31,7 +31,7 @@ class LoginController extends Controller
             // Ensure 'username' is included in the query if it's not an email
             $credentials['username'] = $credentials['username'];
         }
-
+        // dd(Auth::attempt($credentials));
         // Attempt to authenticate user
         if (Auth::attempt($credentials)) {
             $user = Auth::user();

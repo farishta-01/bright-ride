@@ -12,6 +12,7 @@ use App\Http\Controllers\frontend\ServicesController;
 use App\Http\Controllers\frontend\AppointmentController;
 use App\Http\Controllers\frontend\BrandsController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,8 +46,9 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
 });
 Route::middleware(['auth'])->group(function () {
     Route::get('/appointment/{id?}', [AppointmentController::class, 'create'])->name('appointment.create');
-    Route::post('/appointment/store', [AppointmentController::class, 'store']);
+    Route::post('/appointment/store', [AppointmentController::class, 'store'])->name('appointment.store');
     Route::any('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/appointments/confirm/{token}', [AppointmentController::class, 'confirm'])->name('appointments.confirm');
 });
 Route::get('/', [HomeController::class, 'index'])->name('frontend.home');
 Route::get('/services', [ServicesController::class, 'index'])->name('frontend.service');
@@ -58,3 +60,4 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.pag
 Route::post('/login-process', [LoginController::class, 'login'])->name('login');
 Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('register');
 Route::post('/register-process', [LoginController::class, 'register'])->name('register.post');
+Route::resource('photos', PhotoController::class);

@@ -3,6 +3,7 @@
 @section('css')
 @endsection
 @section('content')
+
     <section id="featured-cars" class="featured-cars">
         <div class="container">
             <div class="section-header">
@@ -47,4 +48,12 @@
             </div><!--/.featured-cars-content-->
 
     </section><!--/.featured-cars-->
+@endsection
+@section('javascript')
+    <script>
+        @if (session('success'))
+            toastr.success("{{ session('success') }}");
+        @endif
+    </script>
+
 @endsection

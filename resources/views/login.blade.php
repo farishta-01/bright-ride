@@ -49,6 +49,11 @@
                                 {{ session('success') }}
                             </div>
                         @endif
+                        @if (session('error'))
+                            <div class="alert alert-danger text-center">
+                                {{ session('error') }}
+                            </div>
+                        @endif
                         <div class="card-body">
                             <form id="loginForm" method="POST" action="{{ route('login') }}">
                                 @csrf
