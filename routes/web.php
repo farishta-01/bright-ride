@@ -60,4 +60,4 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.pag
 Route::post('/login-process', [LoginController::class, 'login'])->name('login');
 Route::get('/register', [LoginController::class, 'showRegisterForm'])->name('register');
 Route::post('/register-process', [LoginController::class, 'register'])->name('register.post');
-Route::resource('photos', PhotoController::class);
+// Route::resource('photos', PhotoController::class);

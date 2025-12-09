@@ -6,12 +6,25 @@
     <section id="home" class="welcome-hero">
         <div class="container">
             <div class="welcome-hero-txt">
-                <h2>get your desired car in resonable price</h2>
+                <div class="hero-badge">
+                    <i class="fa fa-star"></i>
+                    <span>Premium Car Dealership</span>
+                </div>
+                <h2>Find Your <span>Dream Car</span> at the Best Price</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
+                    Discover an extensive collection of premium vehicles. From luxury sedans to powerful SUVs,
+                    we offer the finest selection with unbeatable prices and exceptional service.
                 </p>
-                <button class="welcome-btn" onclick="window.location.href='#'">contact us</button>
+                <div class="hero-buttons">
+                    <a href="{{ route('frontend.featured_cars') }}" class="welcome-btn">
+                        <i class="fa fa-car"></i>
+                        Browse Cars
+                    </a>
+                    <a href="{{ route('frontend.contact') }}" class="welcome-btn btn-outline">
+                        <i class="fa fa-phone"></i>
+                        Contact Us
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -20,115 +33,68 @@
                 <div class="col-md-12">
                     <div class="model-search-content">
                         <div class="row">
-                            <div class="col-md-offset-1 col-md-2 col-sm-12">
-                                <div class="single-model-search">
-                                    <h2>select year</h2>
-                                    <div class="model-select-icon">
-                                        <select class="form-control">
-
-                                            <option value="default">year</option><!-- /.option-->
-
-                                            <option value="2018">2018</option><!-- /.option-->
-
-                                            <option value="2017">2017</option><!-- /.option-->
-                                            <option value="2016">2016</option><!-- /.option-->
-
-                                        </select><!-- /.select-->
-                                    </div><!-- /.model-select-icon -->
-                                </div>
-                                <div class="single-model-search">
-                                    <h2>body style</h2>
-                                    <div class="model-select-icon">
-                                        <select class="form-control">
-
-                                            <option value="default">style</option><!-- /.option-->
-
-                                            <option value="sedan">sedan</option><!-- /.option-->
-
-                                            <option value="van">van</option><!-- /.option-->
-                                            <option value="roadster">roadster</option><!-- /.option-->
-
-                                        </select><!-- /.select-->
-                                    </div><!-- /.model-select-icon -->
+                            <div class="single-model-search">
+                                <h2>Select Year</h2>
+                                <div class="model-select-icon">
+                                    <select class="form-control">
+                                        <option value="default">Choose Year</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-md-offset-1 col-md-2 col-sm-12">
-                                <div class="single-model-search">
-                                    <h2>select make</h2>
-                                    <div class="model-select-icon">
-                                        <select class="form-control">
-
-                                            <option value="default">make</option><!-- /.option-->
-
-                                            <option value="toyota">toyota</option><!-- /.option-->
-
-                                            <option value="holden">holden</option><!-- /.option-->
-                                            <option value="maecedes-benz">maecedes-benz.</option><!-- /.option-->
-
-                                        </select><!-- /.select-->
-                                    </div><!-- /.model-select-icon -->
-                                </div>
-                                <div class="single-model-search">
-                                    <h2>car condition</h2>
-                                    <div class="model-select-icon">
-                                        <select class="form-control">
-
-                                            <option value="default">condition</option><!-- /.option-->
-
-                                            <option value="something">something</option><!-- /.option-->
-
-                                            <option value="something">something</option><!-- /.option-->
-                                            <option value="something">something</option><!-- /.option-->
-
-                                        </select><!-- /.select-->
-                                    </div><!-- /.model-select-icon -->
+                            <div class="single-model-search">
+                                <h2>Body Style</h2>
+                                <div class="model-select-icon">
+                                    <select class="form-control">
+                                        <option value="default">Choose Style</option>
+                                        <option value="sedan">Sedan</option>
+                                        <option value="suv">SUV</option>
+                                        <option value="coupe">Coupe</option>
+                                        <option value="hatchback">Hatchback</option>
+                                        <option value="convertible">Convertible</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-md-offset-1 col-md-2 col-sm-12">
-                                <div class="single-model-search">
-                                    <h2>select model</h2>
-                                    <div class="model-select-icon">
-                                        <select class="form-control">
-
-                                            <option value="default">model</option><!-- /.option-->
-
-                                            <option value="kia-rio">kia-rio</option><!-- /.option-->
-
-                                            <option value="mitsubishi">mitsubishi</option><!-- /.option-->
-                                            <option value="ford">ford</option><!-- /.option-->
-
-                                        </select><!-- /.select-->
-                                    </div><!-- /.model-select-icon -->
-                                </div>
-                                <div class="single-model-search">
-                                    <h2>select price</h2>
-                                    <div class="model-select-icon">
-                                        <select class="form-control">
-
-                                            <option value="default">price</option><!-- /.option-->
-
-                                            <option value="$0.00">$0.00</option><!-- /.option-->
-
-                                            <option value="$0.00">$0.00</option><!-- /.option-->
-                                            <option value="$0.00">$0.00</option><!-- /.option-->
-
-                                        </select><!-- /.select-->
-                                    </div><!-- /.model-select-icon -->
+                            <div class="single-model-search">
+                                <h2>Select Make</h2>
+                                <div class="model-select-icon">
+                                    <select class="form-control">
+                                        <option value="default">Choose Make</option>
+                                        <option value="bmw">BMW</option>
+                                        <option value="mercedes">Mercedes-Benz</option>
+                                        <option value="audi">Audi</option>
+                                        <option value="toyota">Toyota</option>
+                                        <option value="honda">Honda</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-md-2 col-sm-12">
-                                <div class="single-model-search text-center">
-                                    <button class="welcome-btn model-search-btn" onclick="window.location.href='#'">
-                                        search
-                                    </button>
+                            <div class="single-model-search">
+                                <h2>Price Range</h2>
+                                <div class="model-select-icon">
+                                    <select class="form-control">
+                                        <option value="default">Choose Price</option>
+                                        <option value="0-10000">Under £10,000</option>
+                                        <option value="10000-25000">£10,000 - £25,000</option>
+                                        <option value="25000-50000">£25,000 - £50,000</option>
+                                        <option value="50000+">£50,000+</option>
+                                    </select>
                                 </div>
+                            </div>
+                            <div class="single-model-search">
+                                <button class="welcome-btn model-search-btn" onclick="window.location.href='{{ route('frontend.featured_cars') }}'">
+                                    <i class="fa fa-search"></i>
+                                    Search
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 @endsection
 @section('javascript')
